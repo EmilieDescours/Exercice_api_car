@@ -1,7 +1,17 @@
 package com.example.Exercice_api_car.model;
 
+import org.springframework.web.bind.annotation.GetMapping;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
 public class Car {
+    @Id
+//    @GeneratedValue
     private int id;
+
     private String brandCar;
     private String colorCar;
 
