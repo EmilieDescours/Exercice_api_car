@@ -1,0 +1,38 @@
+version: '3.8'
+services:
+  # database
+  db:
+    image: mariadb:10.5
+    container_name: cars-db
+    restart: unless-stopped
+    ports:
+      - "3307:3306"
+    # permet la persistance de la bdd
+    volumes:
+      - ./bdd:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=admin
+      - MYSQL_DATABASE=VehiculeRental
+      - MYSQL_USER=emilie
+      - MYSQL_PASSWORD=admin
+    networks:
+      - cars
+  # php my admin
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin:5.0
+    container_name: cars-phpmyadmin
+    restart: unless-stopped
+    ports:
+      - "8083:80"
+    environment:
+      - PMA_ARBITRARY=1
+      - PMA_HOST=db
+      - PMA_USER=emilie
+      - PMA_PASSWORD=admin
+    depends_on:
+      - db
+    networks:
+      - cars
+networks:
+  cars:
+    driver: bridge
