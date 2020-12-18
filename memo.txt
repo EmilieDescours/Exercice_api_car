@@ -1,0 +1,34 @@
+Annotations SPRINGBOOT / JPA:
+
+@Autowired : Permet d’injecter des dépendances entre les @Beans.
+
+@Beans : Objet instancié et géré par Spring.
+
+@Configuration : Spécifie les méthodes de définition @Bean.
+
+@EnableAutoConfiguration : Configure automatiquement les @Beans .
+
+@Entity : Spécifie une classe en tant qu’entité persistante.
+
+@GeneratedValue : Clé primaire générée de façon automatique lors de l’insertion en base.
+
+@GetMapping : Raccourci pour @RequestMapping (RequestMethod.GET).
+Idem pour @PostMapping, @PutMapping, @DeleteMapping…
+
+@Id : Mappe une clé primaire sur un champ unique.
+
+@PathVariable : Extrait les valeurs de l’URI.
+
+@Query : Permet d’effectuer une requête.
+
+@Repository : Indique que la classe encapsule les méthodes de stockage, de récupération, de recherche, de mise à jour et de suppression sur les objets.
+
+@RequestBody : Indique qu’un paramètre method est lié à la requête HTTP.
+
+@ResponseBody : Indique que le type de retour doit être directement écrit dans le corps de la réponse HTTP.
+
+@RequestMapping : Mapp les requêtes Web aux méthodes du Controller.
+
+@SpringBootApplication : Déclare une ou plusieurs méthodes @Bean et déclenche la configuration automatique.
+
+@RestController : Permet la création de services Web RESTful.
